@@ -29,5 +29,5 @@ const toMap = (key, value) => (state, object) => {
 const slots = schema.intents.map(_ => _.slots).reduce(flatten, []).reduce(toMap('name', 'type'), {});
 
 utterances.map(utterance => Utterances(utterance, slots, dictionary)).reduce(flatten, []).forEach(utterance => {
-  console.log(utterance.replace(/\s+/g, ' '));
+  console.log(utterance.replace(/\s+/g, ' ').replace(/\{\|/g, '{'));
 });

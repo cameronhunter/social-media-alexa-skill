@@ -6,8 +6,9 @@ import TwitterConfig from '../config/twitter.config.js';
 @Skill
 export default class SocialMedia {
 
-  constructor(attributes, client = new Twitter(TwitterConfig)) {
+  constructor(attributes, client = new Twitter(TwitterConfig), max = 10) {
     this.client = client;
+    this.max = max;
   }
 
   @Launch
@@ -15,15 +16,24 @@ export default class SocialMedia {
     return ask('Welcome to Social Media! Would you like to know what\'s trending at the moment?');
   }
 
-  @Intent('Trending', 'AMAZON.YesIntent')
-  trending() {
-    return this.client.getTrendingTopics().then(([response]) => {
-      const numberOfTrends = response.trends.length;
-      const trends = response.trends.map(t => t.name).reduce((state, trend, i) => (
+  @Intent('Trending', 'TrendingCity', 'TrendingState', 'TrendingPlace', 'AMAZON.YesIntent')
+  trending(slots) {
+    const { city, state, place } = slots;
+    return this.client.findLocation(city, state, place).then(place => {
+      return Promise.all([place, this.client.getTrendingTopics({ id: place.woeid })]);
+    }).then(([place, [response]]) => {
+      const trends = response.trends.slice(0, this.max);
+      const numberOfTrends = trends.length;
+      const trendsSentence = trends.map(t => t.name).reduce((state, trend, i) => (
         `${state}, ${(i === numberOfTrends - 1) ? 'and, ' : ''}${trend}`
       ));
 
-      return say(`Here are the top trends. ${trends}`);
+      const placeName = [place.name, place.country].filter(Boolean).join(', ');
+      const intro = place.woeid == 1 ? 'Here are the top world wide trends' : `Here are the top trends for ${placeName}`;
+      return say(`${intro}. ${trendsSentence}`);
+    }).catch(error => {
+      console.error('[SocialMedia]', error, slots);
+      return say('I\'m having difficulty finding what\'s trending. Please try again later.');
     });
   }
 

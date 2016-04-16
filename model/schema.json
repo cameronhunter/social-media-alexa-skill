@@ -5,7 +5,10 @@
     { "intent": "AMAZON.NoIntent" },
     { "intent": "AMAZON.StopIntent" },
     { "intent": "AMAZON.YesIntent" },
+    { "intent": "Snark" },
     { "intent": "Trending" },
-    { "intent": "Snark" }
+    { "intent": "TrendingCity", "slots": [{ "name": "city", "type": "AMAZON.US_CITY" }] },
+    { "intent": "TrendingState", "slots": [{ "name": "state", "type": "AMAZON.US_STATE" }] },
+    { "intent": "TrendingPlace", "slots": [{ "name": "place", "type": "LITERAL" }] }
   ]
 }
