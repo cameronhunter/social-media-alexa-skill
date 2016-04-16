@@ -5,8 +5,8 @@ An Alexa skill for the Amazon Echo – it reads trending topics from Social Med
 ## Example phrases
 ```
 Alexa, ask Social Media what's trending
-Alexa, ask Social Media what's happening at the moment
 Alexa, ask Social Media what's trending on Twitter
+Alexa, ask Social Media what's trending in San Francisco
 ```
 
 See `model/UTTERANCES` for more example phrases.
