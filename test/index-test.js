@@ -20,7 +20,6 @@ test.skip('Trending intent', t => {
   const event = Request.intent('Trending').build();
 
   return Skill(event).then(response => {
-    console.log(JSON.stringify(response, null, 2));
     t.deepEqual(response, {
       version: '1.0',
       response: {
