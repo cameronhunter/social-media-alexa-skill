@@ -2,7 +2,7 @@
   "name": "social-media-alexa-skill",
   "private": true,
   "version": "0.0.0",
-  "description": "An Alexa skill for the Amazon Echo. It read trending topics from Social Media",
+  "description": "An Alexa skill for the Amazon Echo. It reads trending topics from Social Media",
   "main": "build/index.js",
   "scripts": {
     "lint": "eslint src/**/*.js test/**/*.js",
