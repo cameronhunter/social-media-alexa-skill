@@ -9,23 +9,23 @@ test('LaunchRequest', t => {
     t.deepEqual(response, {
       version: '1.0',
       response: {
-        shouldEndSession: true,
-        outputSpeech: { type: 'PlainText', text: 'Socialmedia launched!' }
+        shouldEndSession: false,
+        outputSpeech: { type: 'PlainText', text: 'Welcome to Social Media! Would you like to know what\'s trending at the moment?' }
       }
     });
   });
 });
 
-test('Hello intent', t => {
-  const event = Request.intent('hello', { name: 'world' }).build();
+test.skip('Trending intent', t => {
+  const event = Request.intent('Trending').build();
 
   return Skill(event).then(response => {
+    console.log(JSON.stringify(response, null, 2));
     t.deepEqual(response, {
       version: '1.0',
       response: {
         shouldEndSession: true,
-        outputSpeech: { type: 'PlainText', text: 'Hello world' },
-        card: { type: 'Simple', title: 'Socialmedia', content: 'Hello world' }
+        outputSpeech: { type: 'PlainText', text: 'Hello world' }
       }
     });
   });
