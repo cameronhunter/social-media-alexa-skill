@@ -1,7 +1,24 @@
 {
-  "names": [
-    "alexa",
-    "echo",
-    "world"
+  "trending": [
+    "trending",
+    "happening",
+    "going on"
+  ],
+  "now": [
+    "now",
+    "at the moment",
+    "currently",
+    "right now"
+  ],
+  "Twitter": [
+    "Twitter",
+    "Social Media"
+  ],
+  "Facebook": [
+    "Facebook"
+  ],
+  "what's": [
+    "what's",
+    "what is"
   ]
 }

@@ -5,6 +5,7 @@
     { "intent": "AMAZON.NoIntent" },
     { "intent": "AMAZON.StopIntent" },
     { "intent": "AMAZON.YesIntent" },
-    { "intent": "Trending" }
+    { "intent": "Trending" },
+    { "intent": "Snark" }
   ]
 }

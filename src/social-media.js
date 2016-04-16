@@ -27,6 +27,11 @@ export default class SocialMedia {
     });
   }
 
+  @Intent('Snark')
+  snark() {
+    return say('I don\'t know, probably something that happened last year.');
+  }
+
   @Intent('AMAZON.HelpIntent')
   help() {
     return Response.build({
