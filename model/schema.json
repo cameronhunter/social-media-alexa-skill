@@ -8,7 +8,8 @@
     { "intent": "Snark" },
     { "intent": "Trending" },
     { "intent": "TrendingCity", "slots": [{ "name": "city", "type": "AMAZON.US_CITY" }] },
-    { "intent": "TrendingState", "slots": [{ "name": "state", "type": "AMAZON.US_STATE" }] },
-    { "intent": "TrendingPlace", "slots": [{ "name": "place", "type": "LITERAL" }] }
+    { "intent": "TrendingPlace", "slots": [{ "name": "place", "type": "LITERAL" }] },
+    { "intent": "TrendingWorldwide" },
+    { "intent": "Nowhere" }
   ]
 }

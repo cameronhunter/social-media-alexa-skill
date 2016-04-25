@@ -2,9 +2,13 @@ Trending {what's} {trending} {now}
 Trending {what's} {currently|} {trending}
 Trending {what's} {trending} {now|} on {Twitter}
 TrendingCity {what's} {trending} {now|} in {|city}
-TrendingState {what's} {trending} {now|} in {|state}
 TrendingPlace {what's} {trending} {now|} in {places|place}
+TrendingWorldwide {what's} {trending} {now|} {worldwide}
 TrendingCity {what's} {currently|} {trending} in {|city}
-TrendingState {what's} {currently|} {trending} in {|state}
 TrendingPlace {what's} {currently|} {trending} in {places|place}
+TrendingWorldwide {what's} {currently|} {trending} {worldwide}
+TrendingCity {|city}
+TrendingPlace {places|place}
+TrendingWorldwide {worldwide}
+Nowhere nowhere
 Snark {what's} {trending} on {Facebook}
